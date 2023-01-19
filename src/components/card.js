@@ -38,15 +38,7 @@ const Card = props => {
                                                 <Text color="#000" fontSize="sm">
                                                     Username : {user?.whatsapp}
                                                 </Text>
-                                                <Badge
-                                                    onClick={() => props.sendCallbackFn(campaign, user?.whatsapp)}
-                                                    cursor={"pointer"}
-                                                    borderRadius="base"
-                                                    px="25"
-                                                    colorScheme={"teal"}
-                                                >
-                                                    Send
-                                                </Badge>
+                                                <Button onClick={() => props.sendCallbackFn(campaign, user?.whatsapp)} size='xs' isLoading={props.isLoading} colorScheme='whatsapp'>Send</Button>
                                             </Box>
                                         ))}
                                     </Box>
@@ -56,8 +48,8 @@ const Card = props => {
                         {campaign?.userId.length > 1 && (
                             <Button
                                 onClick={() => props.sendAllCallbackFn(campaign, campaign?.userId)}
-                                backgroundColor={"blue.500"}
-                                color={"white"}
+                                isLoading={props.isLoading}
+                                colorScheme='blue' variant='solid'
                                 float={"right"}
                                 mr="5"
                                 mt="10"
