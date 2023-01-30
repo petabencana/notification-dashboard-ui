@@ -30,7 +30,7 @@ export const getReports = () => {
                         "properties.tags.region_code"
                     );
                     Object.keys(groupedObj).map(key => {
-                        const regionCode = checkIfSubscriptionExist(response[1], key);
+                        const userId = checkIfSubscriptionExist(response[1], key);
                         const region = getRegionName(response[2]?.data?.result?.objects?.output?.geometries, key);
 
                         groupedObj[key].map(item => {
@@ -38,7 +38,7 @@ export const getReports = () => {
                                 id: key,
                                 title: `Report region : ${region}`,
                                 disaster_type: `${groupedObj[item?.properties.tags?.region_code].length} report(s)`,
-                                userId: regionCode || [],
+                                userId: userId || [],
                                 reportId: item?.properties?.pkey,
                                 instanceRegionCode: item?.properties.tags?.instance_region_code
                             });

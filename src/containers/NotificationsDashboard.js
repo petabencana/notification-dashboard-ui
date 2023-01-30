@@ -87,7 +87,6 @@ const NotificationsDashboard = () => {
         const body = structuredClone(report)
         body.deployment = "id";
         body.language = "en";
-        body.notifyType = "location-based";
         if (Array.isArray(userId)) {
             // eslint-disable-next-line array-callback-return
             userId.map(user => {
@@ -96,7 +95,7 @@ const NotificationsDashboard = () => {
             });
             return;
         }
-        body.userId = report["userId"][0].whatsapp;
+        body.userId = userId;
         triggerNotification(body);
     };
 
