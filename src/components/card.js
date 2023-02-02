@@ -38,7 +38,7 @@ const Card = props => {
                                                 <Text color="#000" fontSize="sm">
                                                     Username : {user?.whatsapp}
                                                 </Text>
-                                                <Button onClick={() => props.sendCallbackFn(campaign, user?.whatsapp)} size='xs' isLoading={props.isLoading} colorScheme='whatsapp'>Send</Button>
+                                                <Button onClick={() => props.sendCallbackFn(campaign, user)} size='xs' isLoading={props.isLoading} colorScheme='whatsapp'>Send</Button>
                                             </Box>
                                         ))}
                                     </Box>

@@ -86,17 +86,18 @@ const NotificationsDashboard = () => {
         // eslint-disable-next-line no-undef
         const body = structuredClone(report)
         body.deployment = "id";
-        body.language = "en";
         body.notifyType = 'location-based';
         if (Array.isArray(userId)) {
             // eslint-disable-next-line array-callback-return
             userId.map(user => {
                 body.userId = user?.whatsapp;
+                body.language = user?.language_code;
                 triggerNotification(body);
             });
             return;
         }
-        body.userId = userId;
+        body.userId = userId?.whatsapp;
+        body.language = userId?.language_code;
         triggerNotification(body);
     };
 
