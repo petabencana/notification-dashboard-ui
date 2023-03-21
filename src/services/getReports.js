@@ -37,8 +37,9 @@ export const getReports = () => {
                             reportData.push({
                                 id: key,
                                 title: `Report region : ${region}`,
-                                disaster_type: `${groupedObj[item?.properties.tags?.region_code].length} report(s)`,
+                                reportCount: `${groupedObj[item?.properties.tags?.region_code].length} report(s)`,
                                 userId: userId || [],
+                                reports: groupedObj[item?.properties.tags?.region_code],
                                 reportId: item?.properties?.pkey,
                                 instanceRegionCode: item?.properties.tags?.instance_region_code
                             });
