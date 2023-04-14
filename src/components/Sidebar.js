@@ -7,7 +7,7 @@ display:flex;
 flex-direction:column;
 width:20rem;
 background:#0c76b3;
-height:100vh;
+height:100%;
 `
 const UsernameWrapper = styled.div`
 display:flex;
