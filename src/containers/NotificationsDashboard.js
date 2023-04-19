@@ -17,6 +17,7 @@ const CampaingsWrapper = styled.div`
     display: grid;
     padding: 1rem;
     grid-auto-rows: min-content;
+    margin-left: 20rem;
 `;
 
 const listItems = [
@@ -125,7 +126,6 @@ const NotificationsDashboard = () => {
 
     return (
         <>
-            <Container>
                 <Sidebar
                     onClickItem={selectedid => {
                         setSelectedId(selectedid);
@@ -133,13 +133,12 @@ const NotificationsDashboard = () => {
                     listItems={listItems}
                 />
                 {isLoading ? (
-                    <Center>
+                    <Center position="absolute" top="50%" left="50%" transform="translate(50% , -50%)" h="100%">
                         <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
                     </Center>
                 ) : (
                     <CampaingsWrapper>{DisplayComponent}</CampaingsWrapper>
                 )}
-            </Container>
         </>
     );
 };

@@ -8,6 +8,8 @@ flex-direction:column;
 width:20rem;
 background:#0c76b3;
 height:100%;
+position: fixed;
+z-index: 1;
 `
 const UsernameWrapper = styled.div`
 display:flex;
